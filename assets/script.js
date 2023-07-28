@@ -3,10 +3,12 @@ const inputButton = document.querySelector(".input-button");
 const romanWrapper = document.querySelector(".roman-wrapper");
 
 function getRomanValue() {
-    // Function to display converted value to newly created element
+    // Clear previous result
+    romanWrapper.innerHTML = "";
+    // Function to display converted value
     let romanConvertEl = document.createElement("p");
-    romanConvertEl.innerHTML = convertToRoman(inputNumber.value)
-    romanWrapper.appendChild(romanConvertEl)
+    romanConvertEl.innerHTML = convertToRoman(inputNumber.value);
+    romanWrapper.appendChild(romanConvertEl);
 }
 
 function convertToRoman(num) {
