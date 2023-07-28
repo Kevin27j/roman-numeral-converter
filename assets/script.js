@@ -1,8 +1,12 @@
 const inputNumber = document.querySelector(".input-number");
 const inputButton = document.querySelector(".input-button");
+const romanWrapper = document.querySelector(".roman-wrapper");
 
 function getRomanValue() {
     // Function to display converted value to newly created element
+    let romanConvertEl = document.createElement("p");
+    romanConvertEl.innerHTML = convertToRoman(inputNumber.value)
+    romanWrapper.appendChild(romanConvertEl)
 }
 
 function convertToRoman(num) {
@@ -21,7 +25,6 @@ function convertToRoman(num) {
         { value: 4, symbol: "IV" },
         { value: 1, symbol: "I" }
     ];
-
     let result = "";
     for (let numerals of romanNumerlMap) {
         while (num >= numerals.value) {
@@ -31,3 +34,5 @@ function convertToRoman(num) {
     }
     return result;
 }
+
+inputButton.addEventListener("click", getRomanValue);
