@@ -3,14 +3,16 @@ const inputButton = document.querySelector(".input-button");
 const romanWrapper = document.querySelector(".output-wrapper");
 
 function getRomanValue() {
-    let romanSymbol = romanWrapper.querySelector(".roman-sym");
+    let romanSubWrapper = romanWrapper.querySelector(".sub-wrapper");
+    let romanSymbol = romanSubWrapper.querySelector(".roman-sym");
+    
 
     // check if the result output already exist
     if(!romanSymbol){
         // If does not exist, create one
         romanSymbol = document.createElement("p");
         romanSymbol.setAttribute("class", "roman-sym");
-        romanWrapper.appendChild(romanSymbol);
+        romanSubWrapper.appendChild(romanSymbol);
     }
     romanSymbol.innerHTML = convertToRoman(inputNumber.value);
 }
