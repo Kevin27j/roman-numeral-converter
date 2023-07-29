@@ -3,12 +3,16 @@ const inputButton = document.querySelector(".input-button");
 const romanWrapper = document.querySelector(".roman-wrapper");
 
 function getRomanValue() {
-    // Clear previous result
-    romanWrapper.innerHTML = "";
-    // Function to display converted value
-    let romanConvertEl = document.createElement("p");
-    romanConvertEl.innerHTML = convertToRoman(inputNumber.value);
-    romanWrapper.appendChild(romanConvertEl);
+    let romanSymbol = romanWrapper.querySelector(".roman-sym");
+
+    // check if the result output already exist
+    if(!romanSymbol){
+        // If does not exist, create one
+        romanSymbol = document.createElement("p");
+        romanSymbol.setAttribute("class", "roman-sym");
+        romanWrapper.appendChild(romanSymbol);
+    }
+    romanSymbol.innerHTML = convertToRoman(inputNumber.value);
 }
 
 function convertToRoman(num) {
