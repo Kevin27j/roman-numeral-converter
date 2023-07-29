@@ -1,6 +1,6 @@
 const inputNumber = document.querySelector(".input-number");
 const inputButton = document.querySelector(".input-button");
-const romanWrapper = document.querySelector(".roman-wrapper");
+const romanWrapper = document.querySelector(".output-wrapper");
 
 function getRomanValue() {
     let romanSymbol = romanWrapper.querySelector(".roman-sym");
